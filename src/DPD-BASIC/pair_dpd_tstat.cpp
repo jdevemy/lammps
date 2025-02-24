@@ -91,7 +91,7 @@ void PairDPDTstat::compute(int eflag, int vflag)
     for (jj = 0; jj < jnum; jj++) {
       j = jlist[jj];
       factor_dpd = special_lj[sbmask(j)];
-      factor_sqrt = special_sqrt[sbmask(j)];
+      factor_sqrt = sqrt(factor_dpd);
       j &= NEIGHMASK;
 
       delx = xtmp - x[j][0];
